@@ -1,0 +1,52 @@
+﻿funciones requeridas por assetsapp
+
+insertar
+
+cambio de ubicación
+cambio de serie
+cambio de referencia
+cambio de tag
+
+borrar
+
+
+PROCESO
+obtener sdf
+	por cada activo
+		existe epc ?
+		si
+			añadir a lista de actualizacion
+		no
+			existe registro
+			si
+				actualizar tag
+				añadir a lista de actualizacion
+			no
+				insertar
+
+añadir a lista de actualizacion
+	idUbicacionSDF != idUbicacionMongo ?
+		actualizar ubicacion
+		existe ubicacion en Mongo ?
+			no
+				insertar
+	serieSDF != serieMongo ?
+		actualizar serie
+	idReferenciaSDF != idReferenciaMongo ?
+		actualizar referencia
+		existe referencia en Mongo ?
+			no
+				insertar
+
+insertar todo
+actualizar todo
+
+
+
+clases de assetsapp
+
+ObjectReal
+Location
+ReferenceObject
+Categorie
+

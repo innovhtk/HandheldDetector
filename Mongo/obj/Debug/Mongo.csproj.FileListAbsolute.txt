@@ -1,0 +1,11 @@
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\Mongo.dll
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\Mongo.pdb
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Bson.dll
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Driver.dll
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Bson.xml
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Driver.xml
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\obj\Debug\Mongo.csprojResolveAssemblyReference.cache
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\obj\Debug\Mongo.dll
+C:\Users\eleaz\OneDrive\Documentos\Visual Studio 2015\Projects\HandheldDetector\Mongo\obj\Debug\Mongo.pdb

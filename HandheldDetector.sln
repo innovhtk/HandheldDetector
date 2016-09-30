@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandheldDetector_wf", "HandheldDetector_wf\HandheldDetector_wf.csproj", "{BE803ED3-160A-4A1C-964E-54A959382ED6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo", "Mongo\Mongo.csproj", "{76333FF6-7F75-4725-A30C-0D17CA2B4255}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE803ED3-160A-4A1C-964E-54A959382ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE803ED3-160A-4A1C-964E-54A959382ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE803ED3-160A-4A1C-964E-54A959382ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
