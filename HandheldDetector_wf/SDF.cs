@@ -106,6 +106,7 @@ namespace HandheldDetector_wf
             if (reference == null)
             {
                 Category noCategory = new Category("Sin Categoría", creator, "null");
+                noCategory = mongo.Insert(noCategory);
                 reference = new ReferenceObject(
                         id,
                         row["AF_DESC_ARTICULO"].ToString(),
@@ -114,7 +115,6 @@ namespace HandheldDetector_wf
                         creator,
                         noCategory
                     );
-                mongo.Insert(noCategory);
                 mongo.Insert(reference);
             }
             return reference;

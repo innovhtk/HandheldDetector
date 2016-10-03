@@ -331,11 +331,15 @@ namespace Mongo
             return ReferenceObjects.Find(x => prop.GetValue(x, null) == value).ToList();
         }
 
-        public void Insert(Category category)
+        public Category Insert(Category category)
         {
             var result = Categories.Find(x => x.id == category.id).ToList();
-            if (result.Count > 0) return;
+            if (result.Count > 0) return category;
+            var result2 = Categories.Find(x => x.name == category.name).ToList();
+            if (result.Count > 0) return result2[0];
             Categories.InsertOne(category);
+            return category;
+            
         }
 
         public void Insert(List<Category> categories)

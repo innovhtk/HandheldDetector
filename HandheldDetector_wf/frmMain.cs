@@ -172,10 +172,22 @@ namespace HandheldDetector_wf
             
             LocalFile = CopyToTemp();
 
-            Task taskUpdate = Task.Factory.StartNew(UpdateDatabase);
+            //Task taskUpdate = Task.Factory.StartNew(UpdateDatabase);
+            //UpdateDatabase ahora se controla por el backgroundWorker
+            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
+        }
 
-            
+        private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Thread.Sleep(1000);
+            progressBar1.Invoke((MethodInvoker)delegate
+            {
+                progressBar1.Visible = false;
+            });
 
+            btCopy.SetPropertyThreadSafe(() => btCopy.Enabled, false);
+            btUpload.SetPropertyThreadSafe(() => btUpload.Enabled, false);            
         }
 
         public void UpdateDatabase()
@@ -187,14 +199,7 @@ namespace HandheldDetector_wf
                 sdf.UpdateProgress += Sdf_UpdateProgress;
                 sdf.Update(data, tbDB.Text, tbUser.Text, tbPwd.Text, tbHost.Text);
 
-                Thread.Sleep(1000);
-                progressBar1.Invoke((MethodInvoker)delegate
-                {
-                    progressBar1.Visible = false;
-                });
-
-                btCopy.SetPropertyThreadSafe(() => btCopy.Enabled, false);
-                btUpload.SetPropertyThreadSafe(() => btUpload.Enabled, false);
+                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -226,6 +231,9 @@ namespace HandheldDetector_wf
             }
         }
 
-        
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            UpdateDatabase();
+        }
     }
 }
