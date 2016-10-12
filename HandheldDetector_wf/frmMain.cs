@@ -34,8 +34,9 @@ namespace HandheldDetector_wf
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                Environment.Exit(0);
+                MessageBox.Show("Error al abrir CS101: "+ex.Message);
+                //Environment.Exit(0);
+                panel1.Enabled = false;
             }
             
         }
@@ -59,15 +60,15 @@ namespace HandheldDetector_wf
                 {
                     Dev = mgr.Devices.FirstConnectedDevice;
                     //dev = mgr.Devices.FirstConnectedDevice;
-                    statusLabel.Text = dev.Name + " está conectado";
-                    var dirs = RemoteDirectory.GetDirectories(dev, dev.GetFolderPath(SpecialFolder.MyDocuments));
+                    statusLabel.Text = Dev.Name + " está conectado";
+                    var dirs = RemoteDirectory.GetDirectories(Dev, Dev.GetFolderPath(SpecialFolder.MyDocuments));
 
                     foreach (var dir in dirs)
                     {
                         lvFolders.Items.Add(dir);
                     }
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
                     lvFolders.Items.Clear();
                 }
@@ -86,8 +87,16 @@ namespace HandheldDetector_wf
         private void frmMain_Load(object sender, EventArgs e)
         {
             //RemoteDevice dev = mgr.Devices.FirstConnectedDevice;
-            Dev = mgr.Devices.FirstConnectedDevice;
-            OnConnection(Dev, Dev != null);
+            try
+            {
+                Dev = mgr.Devices.FirstConnectedDevice;
+                OnConnection(Dev, Dev != null);
+            }
+            catch(Exception ex)
+            {
+                panel1.Enabled = false;
+            }
+            
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -198,8 +207,6 @@ namespace HandheldDetector_wf
                 var data = sdf.Read();
                 sdf.UpdateProgress += Sdf_UpdateProgress;
                 sdf.Update(data, tbDB.Text, tbUser.Text, tbPwd.Text, tbHost.Text);
-
-                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -234,6 +241,40 @@ namespace HandheldDetector_wf
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             UpdateDatabase();
+        }
+
+        private void btSelectSDF_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                lbLocalFile.SetPropertyThreadSafe(() => lbLocalFile.Text, file);
+            }
+
+            if (lbLocalFile.Text != "No se ha seleccionado ningún archivo")
+                btSubirLocal.SetPropertyThreadSafe(() => btSubirLocal.Enabled, true);
+        }
+
+        private void btSubirLocal_Click(object sender, EventArgs e)
+        {
+            btCopy.SetPropertyThreadSafe(() => btCopy.Enabled, false);
+            btUpload.SetPropertyThreadSafe(() => btUpload.Enabled, false);
+
+            LocalFile = lbLocalFile.Text;
+
+            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
+        }
+
+        private void progressBar2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbLocalFile_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

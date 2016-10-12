@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandheldDetector_wf", "Hand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo", "Mongo\Mongo.csproj", "{76333FF6-7F75-4725-A30C-0D17CA2B4255}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDFUploader-Gabo", "SDFUploader-Gabo\SDFUploader-Gabo.csproj", "{0F561684-807F-4C72-8B59-BE81EF185731}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76333FF6-7F75-4725-A30C-0D17CA2B4255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F561684-807F-4C72-8B59-BE81EF185731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F561684-807F-4C72-8B59-BE81EF185731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F561684-807F-4C72-8B59-BE81EF185731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F561684-807F-4C72-8B59-BE81EF185731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

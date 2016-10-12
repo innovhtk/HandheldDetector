@@ -45,6 +45,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lbLocalFile = new System.Windows.Forms.TextBox();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.btSubirLocal = new System.Windows.Forms.Button();
+            this.btSelectSDF = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,18 +61,21 @@
             this.tbHost = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -230,6 +238,58 @@
             this.statusLabel.Text = "Conexión";
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.lbLocalFile);
+            this.tabPage3.Controls.Add(this.progressBar2);
+            this.tabPage3.Controls.Add(this.btSubirLocal);
+            this.tabPage3.Controls.Add(this.btSelectSDF);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(483, 259);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "SDF Local";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lbLocalFile
+            // 
+            this.lbLocalFile.Location = new System.Drawing.Point(8, 78);
+            this.lbLocalFile.Name = "lbLocalFile";
+            this.lbLocalFile.Size = new System.Drawing.Size(467, 20);
+            this.lbLocalFile.TabIndex = 5;
+            this.lbLocalFile.Text = "No se ha seleccionado ningún archivo";
+            this.lbLocalFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lbLocalFile.TextChanged += new System.EventHandler(this.lbLocalFile_TextChanged);
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(8, 228);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(379, 23);
+            this.progressBar2.TabIndex = 4;
+            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
+            // 
+            // btSubirLocal
+            // 
+            this.btSubirLocal.Enabled = false;
+            this.btSubirLocal.Location = new System.Drawing.Point(393, 227);
+            this.btSubirLocal.Name = "btSubirLocal";
+            this.btSubirLocal.Size = new System.Drawing.Size(82, 25);
+            this.btSubirLocal.TabIndex = 3;
+            this.btSubirLocal.Text = "Subir";
+            this.btSubirLocal.UseVisualStyleBackColor = true;
+            this.btSubirLocal.Click += new System.EventHandler(this.btSubirLocal_Click);
+            // 
+            // btSelectSDF
+            // 
+            this.btSelectSDF.Location = new System.Drawing.Point(141, 119);
+            this.btSelectSDF.Name = "btSelectSDF";
+            this.btSelectSDF.Size = new System.Drawing.Size(204, 43);
+            this.btSelectSDF.TabIndex = 0;
+            this.btSelectSDF.Text = "Selecionar SDF";
+            this.btSelectSDF.UseVisualStyleBackColor = true;
+            this.btSelectSDF.Click += new System.EventHandler(this.btSelectSDF_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label5);
@@ -323,6 +383,10 @@
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +405,8 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -376,6 +442,12 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Button btSubirLocal;
+        private System.Windows.Forms.Button btSelectSDF;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox lbLocalFile;
     }
 }
 
